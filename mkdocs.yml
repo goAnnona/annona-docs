@@ -1,0 +1,31 @@
+site_name: Annona Docs
+site_description: Annona delivery, architecture, proof, and operator documentation
+site_url: https://goannona.github.io/annona-docs/
+repo_url: https://github.com/goAnnona/annona-docs
+repo_name: goAnnona/annona-docs
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+nav:
+  - Home: index.md
+  - Getting started:
+      - Local preview: getting-started/local-preview.md
+  - Proofs:
+      - Current end-to-end status: proofs/current-end-to-end-status.md
+  - Ingestion:
+      - Current live status: ingestion/current-live-status.md
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+plugins:
+  - search
