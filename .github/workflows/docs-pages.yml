@@ -1,6 +1,9 @@
 name: Deploy Docs
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -14,10 +17,37 @@ concurrency:
 
 jobs:
   build:
-    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
-      - name: GitHub Pages is not enabled for this private repo plan
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Install docs dependencies
         run: |
-          echo "GitHub Pages deployment is intentionally disabled for this private repo on the current plan."
-          echo "MkDocs build validation remains active via Docs CI."
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build MkDocs site
+        run: mkdocs build --strict
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
