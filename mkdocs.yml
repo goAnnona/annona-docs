@@ -14,6 +14,7 @@ theme:
     - search.highlight
 nav:
   - Home: index.md
+  - User guide: user-guide.md
   - Getting started:
       - Local preview: getting-started/local-preview.md
   - Proofs:

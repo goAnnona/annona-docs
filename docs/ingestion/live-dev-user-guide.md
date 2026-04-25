@@ -1,85 +1,100 @@
 # Live DEV ingestion user guide
 
-This guide shows the **current proven DEV flow** for Annona end to end:
+This guide shows the current route-based Annona onboarding and ingestion flow:
 
-1. open the proof route in the web UI
-2. upload a real bundle from the browser
-3. let the data-lake bridge process it into the DEV lake
-4. confirm the new dataset version is discoverable
-5. confirm the grounded agent can inspect that uploaded data with the correct disclosure
+1. open `/ingestion`
+2. choose the target customer plane
+3. upload or stage one accepted bundle/source file
+4. validate the destination preview and expected dataset naming
+5. submit through the guided workflow or the expert fast path
+6. inspect durable dataset and customer detail on `/datasets` and `/customers`
+7. verify downstream grounded answers and traces with the correct DEV disclosure
 
 ## Scope and guardrails
 
 - This is a **DEV-only proof flow**.
-- The proof surfaces live on `/?proof=1`. The default `/` route stays clean for the canonical comparison view.
+- `/ingestion` is the canonical onboarding and upload route; older proof-only query-flag onboarding references are transitional and should not be used in user instructions.
+- `/datasets` and `/customers` now own durable dataset and customer detail instead of duplicated proof panels inside onboarding.
 - Live lake access is exposed as a **DEV Annona lake preview built from customer-uploaded data**. It is **not** direct ERP or warehouse access.
+- If the data-lake bridge URLs are not configured, the UI falls back to deterministic DEV snapshots and disables live submission except in Playwright test mode.
 
-## Proven example used for this guide
+## Validated route structure
 
-- Customer: `acme`
-- Uploaded file: `ui-proof-091049.csv`
-- Intake ID: `acme-20260425T013843Z-52365e33`
-- Dataset version: `acme:bundle_ui_proof_091049@acme-20260425T013843Z-52365e33`
-- Rows proven through the grounded path:
-  - `Vertex Fleet` with `net_margin = 33333`
-  - `Cedar Motors` with `net_margin = 44444`
+| Route | What to look for |
+| --- | --- |
+| `/ingestion` | Customer ingestion workspace, current stage, next action, latest outcome, guided steps, upload CTA, validation preview, expert fast path, selected dataset readiness, and links to compare/datasets/runs. |
+| `/datasets` | Dataset discovery workspace with version list, schema preview, row preview, lineage, freshness, and related activity. |
+| `/customers` | Customer context workspace with onboarding stage, connector inventory, latest intake health, linked datasets, and linked runs. |
+| `/runs` | Run inspection workspace for traces, tool calls, evidence refs, timings, and failures. |
+| `/` or `/compare` | Presentation-ready side-by-side comparison without embedded upload forms. |
 
-## 1) Authenticate into the live DEV app
+## 1) Authenticate into the DEV app
 
-Open the live DEV app and authenticate with the current demo password.
+Open the DEV app and authenticate with the current demo password. The comparison route stays clean for the product story; operator onboarding now lives on `/ingestion`.
 
-![Authenticated Annona DEV demo home](../assets/ingestion/live-e2e/01-authenticated-home.png)
+## 2) Open the guided onboarding workflow
 
-## 2) Open the DEV proof workspace and choose the file
+Navigate to `/ingestion`. The page should show **Customer ingestion workspace**, a current-stage card, a next-action card, a latest-outcome card, and the ordered ingestion steps.
 
-Navigate to `/?proof=1`, open **DEV proof workspace**, select the customer plane, and choose the file to upload.
+![Guided ingestion wizard on /ingestion](../assets/ingestion/current-ux/01-ingestion-wizard.png)
 
-![DEV proof workspace with a real CSV selected](../assets/ingestion/live-e2e/02-proof-workspace-file-selected.png)
+The ordered workflow is:
 
-## 3) Submit the bundle ingestion from the UI
+1. Customer selection
+2. File selection
+3. Validation and preview
+4. Confirmation
+5. Submission
+6. Completion
 
-Use **Submit bundle ingestion**. The browser receives an accepted intake immediately and shows the live intake ID.
+## 3) Select a customer and file
 
-![Upload accepted in the live DEV proof workspace](../assets/ingestion/live-e2e/03-upload-accepted.png)
+Choose the target customer plane, then select one accepted archive or source file. The UI previews the target plane, expected dataset naming, raw intake root, validation state, and submission mode.
 
-## 4) Refresh until the lake-backed dataset is ready
+When safe defaults are satisfied, the workflow shows that the **Expert fast path** is available. This path is intended for repeat operators who do not need the extra confirmation click.
 
-Use **Refresh status** until the onboarding stage reaches `ready_for_analysis` and the new dataset version is selected.
+![Expert fast path available after safe file selection](../assets/ingestion/current-ux/02-expert-fast-path-ready.png)
 
-Expected proof signals:
+## 4) Submit and watch completion
 
-- the latest intake finishes cleanly
-- the selected dataset shows the new `dataset_version_id`
-- the dataset record count matches the uploaded file
+Use either **Confirm and submit** or **Expert fast path**. The page should move to **Completion** and tell the operator to refresh status until landing, parsing, and discovery finish.
 
-![Lake-backed dataset ready for analysis in the live DEV proof workspace](../assets/ingestion/live-e2e/04-lake-dataset-ready.png)
+![Fast path submitted in Playwright test mode](../assets/ingestion/current-ux/03-fast-path-submitted.png)
 
-## 5) Verify that the grounded agent can inspect the uploaded dataset
+In a live DEV deployment with the data-lake bridge configured, the submit path returns an intake ID and status refreshes show the bridge-backed ingestion outcome. In local/test-mode screenshots, the visible `Playwright submit mock` banner is expected and does not claim live bridge persistence.
 
-The grounded path was then exercised against the same browser session. The trace shows the grounded agent resolving the latest uploaded dataset and producing an answer from the live DEV lake preview.
+## 5) Inspect durable dataset detail
 
-![Grounded agent trace proving live lake preview access](../assets/ingestion/live-e2e/05-agent-trace-proof.png)
+Open `/datasets` from the shell or an ingestion deep link when you need dataset-version ownership details. This route owns version lists, schema preview, row preview, lineage, freshness, and related activity.
 
-The grounded answer for this proof run was:
+![Dedicated datasets workspace on /datasets](../assets/ingestion/current-ux/04-datasets-workspace.png)
 
-```text
-I inspected Acme’s live DEV Annona lake preview for the dataset version acme:bundle_ui_proof_091049@acme-20260425T013843Z-52365e33. That preview shows two rows:
+## 6) Inspect customer context
 
-- Vertex Fleet — net_margin 33333
-- Cedar Motors — net_margin 44444
+Open `/customers` when you need customer-plane detail. This route owns onboarding stage, connector inventory, latest intake health, linked datasets, and linked runs.
 
-Source disclosure: this came from a live DEV Annona lake preview built from customer-uploaded data, not direct ERP or warehouse access.
-```
+![Dedicated customers workspace on /customers](../assets/ingestion/current-ux/05-customers-workspace.png)
+
+## 7) Verify grounded use of uploaded data
+
+After a live DEV upload has produced a discoverable dataset version, use `/compare` and `/runs` to verify the grounded path. The expected proof signals are:
+
+- the latest intake reaches a successful or explicitly reviewable terminal state
+- the selected dataset shows the expected `dataset_version_id`
+- dataset record counts and previews match the uploaded file or bundle
+- grounded answers disclose that the source is a live DEV Annona lake preview built from customer-uploaded data
+- traces show the run/session, dataset, timing, tool, evidence, and request context needed for operator review
 
 ## What this proves today
 
-The current DEV demo now supports the full user-visible proof chain:
+The current DEV demo supports the user-visible proof chain:
 
-- upload from the web UI
-- live handoff into the Annona data-lake bridge
-- processing into a discoverable dataset version
-- lake-backed dataset preview for the selected customer
-- grounded-agent access to that uploaded data with explicit DEV-preview disclosure
+- route-based onboarding on `/ingestion`
+- guided upload and validation with an expert fast path
+- live handoff into the Annona data-lake bridge when configured
+- processing into discoverable dataset versions
+- durable dataset and customer pages on `/datasets` and `/customers`
+- grounded-agent access to uploaded data with explicit DEV-preview disclosure
 
 ## What this does **not** claim yet
 
@@ -87,3 +102,4 @@ The current DEV demo now supports the full user-visible proof chain:
 - direct warehouse federation
 - production support or SLAs
 - operator-free autonomous ingestion repair
+- live upload submission when the data-lake bridge URLs are not configured
