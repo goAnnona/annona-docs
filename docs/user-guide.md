@@ -12,7 +12,7 @@ This guide describes the current DEV web UI route structure and the primary jobs
 | `/customers` | Durable customer context workspace | Review onboarding stage, connector inventory, latest intake health, linked datasets, and linked runs. |
 | `/runs` | Trace and run inspection workspace | Inspect run/session context, tool calls, evidence refs, timings, and failures. |
 
-The old proof-only onboarding workspace is no longer the canonical user path. Use `/ingestion` for onboarding and upload work, then deep-link into `/datasets`, `/customers`, `/runs`, or `/compare` as needed.
+The old proof-only onboarding workspace is no longer the canonical user path. Use `/ingestion` for onboarding and upload work, then deep-link into `/datasets`, `/customers`, `/runs`, or `/compare` as needed. For the proven side-by-side demo behavior, see [DEV comparison demo and trace surfaces](proofs/dev-comparison-demo.md).
 
 ## Standard workflow
 
