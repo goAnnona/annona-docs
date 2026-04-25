@@ -1,0 +1,27 @@
+{
+  "baseUrl": "http://a310d316a546e4c76800354b77ed5c2f-1981527800.us-east-1.elb.amazonaws.com",
+  "checks": [
+    {
+      "name": "Root document",
+      "detail": "GET / returned HTML from the live DEV service.",
+      "status": "passed"
+    },
+    {
+      "name": "Config endpoint",
+      "detail": "GET /api/config?provider=openai returned JSON.",
+      "status": "passed"
+    },
+    {
+      "name": "Customer status endpoint",
+      "detail": "GET /api/customer-status returned the live bridge-backed customer snapshot.",
+      "status": "passed"
+    },
+    {
+      "name": "Password auth",
+      "detail": "POST /api/auth/check accepted the DEV demo password.",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "timestamp": "2026-04-25T12:23:07.335Z"
+}

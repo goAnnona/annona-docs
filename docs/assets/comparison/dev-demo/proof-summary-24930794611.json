@@ -1,0 +1,15 @@
+{
+  "baseUrl": "http://a310d316a546e4c76800354b77ed5c2f-1981527800.us-east-1.elb.amazonaws.com",
+  "timestamp": "2026-04-25T12:23:52.482Z",
+  "screenshots": [
+    "01-landing.png",
+    "02-authenticated.png"
+  ],
+  "notes": [
+    "Captured authenticated view after password entry."
+  ],
+  "title": "Annona — Grounding Demo",
+  "finalUrl": "http://a310d316a546e4c76800354b77ed5c2f-1981527800.us-east-1.elb.amazonaws.com/",
+  "hasPasswordGate": true,
+  "bodySnippet": "Annona.\nGrounding Demo\nRoute-aware compare shell for the current Annona demo slice.\nCompare\nRaw vs grounded answers\nIngestion\nUpload and dataset readiness\nRuns\nTrace and run inspection\nDatasets\nVersions and lineage\nCustomers\nPlanes and readiness\nRELEASE DEV 616BD47E\nCOMPARE\nLive Comparison\n\nDemo-quality side-by-side review of raw reasoning versus grounded Annona output. The compare route stays pre"
+}

@@ -21,6 +21,7 @@ This page is the landing page for Annona proof documentation.
 ## Primary proof guides
 
 - [Annona user guide](../user-guide.md)
+- [DEV comparison demo and trace surfaces](dev-comparison-demo.md)
 - [DEV delivery loop runbook](../delivery/dev-delivery-loop.md)
 - [Current live ingestion status](../ingestion/current-live-status.md)
 - [Live DEV ingestion user guide](../ingestion/live-dev-user-guide.md)
