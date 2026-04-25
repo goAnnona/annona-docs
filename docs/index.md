@@ -14,9 +14,10 @@ This site is the documentation home for Annona.
 
 The Annona comparison demo is live in DEV.
 
-The ingestion UX is partially live, but **not yet ready end to end**. The current web UI exposes onboarding and file selection, but live submit is blocked until the web runtime is configured with the data-lake submit bridge URL.
+The ingestion path is now **working end to end in DEV**: browser upload, bridge processing into the DEV lake, dataset discovery, and grounded-agent access to the uploaded data are all proven live.
 
 See:
 
 - [Current end-to-end status](proofs/current-end-to-end-status.md)
 - [Current live ingestion status](ingestion/current-live-status.md)
+- [Live DEV ingestion user guide](ingestion/live-dev-user-guide.md)

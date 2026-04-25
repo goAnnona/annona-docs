@@ -2,26 +2,24 @@
 
 ## Status
 
-**Not ready end to end yet.**
+**Live end to end in DEV.**
 
-## What is live now
+The Annona DEV demo now supports browser upload, bridge processing into the DEV lake, dataset discovery, and grounded-agent access to the uploaded data.
 
-- onboarding workspace is visible in the web UI
-- customer selection works
-- accepted bundle file types are shown
-- file selection works in the browser
+## Proven today
 
-## Current blocker
+- onboarding workspace is available on the proof route `/?proof=1`
+- browser upload accepts real bundle/source files
+- live submit returns an intake immediately
+- refreshable customer status shows the new dataset version once processing completes
+- grounded-agent traces prove lake-backed preview access to the uploaded customer data
 
-The live submit step is disabled until the web runtime is configured with `ANNONA_DATA_LAKE_SUBMIT_URL`.
+## Current operator guide
 
-That means the current experience can be demonstrated up to file selection, but not through a full live intake handoff yet.
+See the full screenshot-backed guide here:
 
-## Documentation follow-up
+- [Live DEV ingestion user guide](live-dev-user-guide.md)
 
-Once the live bridge is wired, this page should be expanded with:
+## Important disclosure
 
-- end-to-end submit steps
-- screenshots of a successful intake
-- job status interpretation
-- RAW / BRONZE / DuckDB outcomes
+Live dataset access in this demo is described as a **live DEV Annona lake preview built from customer-uploaded data**. It is **not** direct ERP or warehouse access.

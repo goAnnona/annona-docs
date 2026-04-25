@@ -20,6 +20,7 @@ nav:
       - Current end-to-end status: proofs/current-end-to-end-status.md
   - Ingestion:
       - Current live status: ingestion/current-live-status.md
+      - Live DEV ingestion user guide: ingestion/live-dev-user-guide.md
 markdown_extensions:
   - admonition
   - attr_list
