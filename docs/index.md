@@ -22,5 +22,6 @@ See:
 
 - [Annona user guide](user-guide.md)
 - [Current end-to-end status](proofs/current-end-to-end-status.md)
+- [DEV delivery loop runbook](delivery/dev-delivery-loop.md)
 - [Current live ingestion status](ingestion/current-live-status.md)
 - [Live DEV ingestion user guide](ingestion/live-dev-user-guide.md)
