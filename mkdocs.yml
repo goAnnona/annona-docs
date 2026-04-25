@@ -19,6 +19,8 @@ nav:
       - Local preview: getting-started/local-preview.md
   - Proofs:
       - Current end-to-end status: proofs/current-end-to-end-status.md
+  - Delivery:
+      - DEV delivery loop runbook: delivery/dev-delivery-loop.md
   - Ingestion:
       - Current live status: ingestion/current-live-status.md
       - Live DEV ingestion user guide: ingestion/live-dev-user-guide.md
