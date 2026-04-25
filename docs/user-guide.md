@@ -29,11 +29,18 @@ The old proof-only onboarding workspace is no longer the canonical user path. Us
 - Annona currently presents this as a DEV proof workflow, not a production service with SLAs.
 - Live uploaded-data access is disclosed as a **live DEV Annona lake preview built from customer-uploaded data**.
 - It is **not** direct ERP access, direct warehouse federation, or a claim that Annona can read arbitrary customer systems in production.
+- Live submit requires `ANNONA_DATA_LAKE_SUBMIT_URL` and `ANNONA_DATA_LAKE_STATUS_URL` in the deployed web runtime.
 - When the web UI is running without the data-lake bridge, the onboarding surfaces fall back to deterministic DEV snapshots and live submission is disabled except in Playwright test mode.
 
-## Validated UX artifacts
+## Validated artifacts
 
-These screenshots were captured from the shipped web UI route contract in Playwright test mode. The visible banners intentionally say `Mocked DEV snapshot` and `Playwright submit mock`; they validate the current UX structure and copy, not a fresh live bridge upload.
+The available live successful-submit screenshots were captured from the earlier `/?proof=1` proof workspace before the current route split. They are retained as live proof artifacts because they show a real accepted intake, resulting dataset version, and grounded use of uploaded data.
+
+![Upload accepted in the live DEV proof workspace](assets/ingestion/live-e2e/03-upload-accepted.png)
+
+![Lake-backed dataset ready for analysis in the live DEV proof workspace](assets/ingestion/live-e2e/04-lake-dataset-ready.png)
+
+The current route screenshots below were captured from the shipped web UI route contract in Playwright test mode. The visible banners intentionally say `Mocked DEV snapshot` and `Playwright submit mock`; they validate the current UX structure and copy, not a fresh live bridge upload.
 
 ![Guided ingestion wizard on /ingestion](assets/ingestion/current-ux/01-ingestion-wizard.png)
 
