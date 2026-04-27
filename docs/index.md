@@ -1,27 +1,21 @@
 # Annona Docs
 
-This site is the documentation home for Annona.
+Welcome to Annona's customer help center.
 
-## What belongs here
+This site is for customer-facing guidance only. If you see help text or a help button in the customer product, it should send you to a page in this docs site.
 
-- what works end to end in DEV today
-- screenshots and proof guides
-- ingestion, tracing, and delivery architecture
-- operator runbooks
-- environment and deployment notes
+## Start here
 
-## Current status
+- [Welcome to Annona](getting-started/welcome-to-annona.md)
+- [Upload your data](getting-started/upload-your-data.md)
+- [User guide](user-guide.md)
+- [Agents](product/agents.md)
+- [Datasets](product/datasets.md)
+- [Traces](product/traces.md)
+- [Account and access](help/account-and-access.md)
 
-The Annona comparison demo is live in DEV.
+## Documentation boundary
 
-The ingestion path is now route-based: `/ingestion` owns guided onboarding and upload, `/datasets` owns durable dataset detail, `/customers` owns customer context, `/runs` owns trace inspection, and `/` or `/compare` stays focused on the side-by-side comparison story.
+Customer docs explain how to use your Annona tenant.
 
-Live DEV deployments with the data-lake bridge configured support browser upload, bridge processing into the DEV lake, dataset discovery, and grounded-agent access to uploaded data. Local or unbridged environments show deterministic DEV snapshots and do not claim live persistence.
-
-See:
-
-- [Annona user guide](user-guide.md)
-- [Current end-to-end status](proofs/current-end-to-end-status.md)
-- [DEV delivery loop runbook](delivery/dev-delivery-loop.md)
-- [Current live ingestion status](ingestion/current-live-status.md)
-- [Live DEV ingestion user guide](ingestion/live-dev-user-guide.md)
+They do not include internal operator runbooks, platform deployment notes, or private architecture decisions. Those live in internal Annona repositories.
