@@ -1,15 +1,5 @@
 # Account and access
 
-Annona uses separate customer and internal admin surfaces.
+This page remains available for older links. New in-product account help should target [Account and access](../account/access.md).
 
-## Customer access
-
-Customers sign in to their own tenant and should only receive access to their organization's data and tools.
-
-## Admin access
-
-Annona's internal admin UI is separate from the customer product and is not part of the customer help center.
-
-## Future identity direction
-
-Annona is being designed so it can support stronger social and enterprise identity options later, including common enterprise identity providers. The access model should stay stable even as the underlying login providers evolve.
+Annona uses separate customer and internal admin surfaces so customer data and workflows stay tenant-scoped.

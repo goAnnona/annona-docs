@@ -14,17 +14,24 @@ theme:
     - search.highlight
 nav:
   - Home: index.md
-  - Getting started:
-      - Welcome to Annona: getting-started/welcome-to-annona.md
-      - Upload your data: getting-started/upload-your-data.md
-  - Product guides:
-      - User guide: user-guide.md
-      - Agents: product/agents.md
-      - Datasets: product/datasets.md
-      - Traces: product/traces.md
-  - Help:
-      - Account and access: help/account-and-access.md
-      - How help links work: help/using-help-links.md
+  - Customer tenant:
+      - User guide overview: user-guide.md
+      - Home and status: home.md
+      - Onboarding: onboarding.md
+      - Uploads: uploads.md
+  - Product workflows:
+      - Agents: agents.md
+      - Datasets: datasets.md
+      - Traces: traces.md
+  - Account and help:
+      - Account and access: account/access.md
+      - Help and support: help.md
+      - Stable help-link targets: help-link-targets.md
+exclude_docs: |
+  delivery/**
+  ingestion/**
+  proofs/**
+  getting-started/local-preview.md
 markdown_extensions:
   - admonition
   - attr_list
