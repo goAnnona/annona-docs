@@ -1,16 +1,5 @@
 # Traces
 
-Traces help you understand what happened during an Annona run.
+This page remains available for older links. New in-product trace help should target [Traces](../traces.md).
 
-## What traces are for
-
-A trace view can help you:
-
-- understand what request was made
-- see when a run started and finished
-- inspect relevant steps, evidence, or failures
-- troubleshoot why a result looked the way it did
-
-## Customer scope
-
-Customers should only be able to view traces that belong to their own tenant. Platform-wide or other-customer traces belong in internal admin tools, not the customer product.
+Traces help you understand what happened during an Annona run. Customer trace views should only include activity from your tenant.

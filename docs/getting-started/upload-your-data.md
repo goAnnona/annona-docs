@@ -1,10 +1,12 @@
 # Upload your data
 
-Uploading data is the first step in setting up your Annona tenant.
+Uploading data is the first step in setting up many Annona tenants.
+
+This page remains available for older links. New in-product upload help should target [Uploads](../uploads.md).
 
 ## What to expect
 
-A typical onboarding flow should help you:
+A typical upload flow should help you:
 
 1. choose your target dataset or upload area
 2. select a file or bundle
