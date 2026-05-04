@@ -13,11 +13,13 @@ If you cannot access your tenant:
 - confirm you are using the customer tenant URL for your organization
 - check whether your invitation has expired or was sent to another email address
 - ask your Annona contact or organization admin to confirm your access
-- use Help for support if sign-in still fails
+- use [Help](../help.md) for support if sign-in still fails
 
 ## Tenant boundaries
 
-Inside your tenant, you should only see customer-facing destinations such as Home, Onboarding, Agents, Datasets, Uploads, Traces, and Help. Internal admin surfaces are separate and are not part of the customer help center.
+Inside your tenant, you should only see customer-facing destinations such as Home, Onboarding, Uploads, Agents, Datasets, Traces, and Help. Internal admin surfaces are separate and are not part of the customer help center.
+
+See [Customer workspace](../help/customer-workspace.md) for the expected workspace boundary.
 
 ## Future identity direction
 

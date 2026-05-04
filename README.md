@@ -2,14 +2,14 @@
 
 Customer-facing documentation hub for Annona.
 
-This repo should publish customer help only.
+This repository publishes customer help only.
 
 ## What belongs here
 
 - getting started guides for customer tenants
 - help pages linked from the customer UI
-- product explanations for onboarding, agents, datasets, traces, and account access
-- customer-safe troubleshooting and FAQ content
+- customer-safe product explanations for onboarding, agents, datasets, uploads, traces, and account access
+- stable help-link targets that product teams can wire into the customer experience
 
 ## What does not belong here
 
@@ -18,8 +18,9 @@ This repo should publish customer help only.
 - operator or admin procedures
 - deployment instructions
 - private delivery proofs
+- DEV-only engineering validation notes
 
-Those internal materials belong in `goAnnona/annona-architect-flow` or other private/internal repos.
+Those internal materials belong in Annona's internal documentation surfaces, especially the Technology Hub in Notion and `goAnnona/annona-architect-flow`.
 
 ## Local preview
 
