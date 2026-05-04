@@ -1,36 +1,43 @@
 # Annona user guide
 
-Annona is organized into separate surfaces so customer work stays focused, understandable, and tenant-scoped.
+Annona is organized into clear customer destinations so day-to-day work stays understandable and tenant-scoped.
 
 ## Your customer tenant
 
 Your organization uses its own Annona tenant, typically at a customer-specific subdomain such as `<your-company>.annona...`.
 
-Inside your tenant, navigation should guide you through a small number of clear jobs:
+Inside your tenant, navigation should guide you through a small number of durable jobs:
 
-- [Home](home.md) for welcome, onboarding state, and service status
-- [Onboarding](onboarding.md) for the first setup path after a new tenant is created
+- [Home](home.md) for welcome, readiness, and next steps
+- [Onboarding](onboarding.md) for first setup and activation
+- [Uploads](uploads.md) for bringing in new data
 - [Agents](agents.md) for asking questions and reviewing grounded recommendations
-- [Datasets](datasets.md) for managing the datasets available to your organization
-- [Uploads](uploads.md) for bringing new data into Annona
-- [Traces](traces.md) for viewing the activity history for your own runs
-- [Help](help.md) for documentation and support links
+- [Datasets](datasets.md) for understanding available data and freshness
+- [Traces](traces.md) for run history, evidence, and troubleshooting
+- [Help](help.md) for docs and support links
 
-## Current route model
+## Customer workspace model
 
-The current DEV product split uses customer-facing routes for `/`, `/agents`, `/datasets`, `/uploads`, `/traces`, and `/help`. The `/jobs` route may remain as an uploads compatibility alias while product links move toward `/uploads`.
+Your tenant should feel like your own workspace.
 
-The long-term product framing is a dedicated customer tenant surface separate from Annona's internal admin surface. Customer help should document the tenant experience, not internal setup or operations.
+That means you should be able to tell:
+
+- which organization and tenant you are in
+- which datasets and uploads belong to your organization
+- which traces belong to your own activity
+- where to get help without being dropped into internal Annona tooling
+
+See [Customer workspace](help/customer-workspace.md) for the workspace boundary and what customer users should expect.
 
 ## What you should not see
 
 Customer tenants should not expose internal admin workflows such as:
 
-- creating or provisioning other customer tenancies
+- creating or provisioning other customer tenants
 - editing global schemas or platform configuration
 - testing another customer's agents
 - viewing platform-wide traces or traces outside your tenant
-- choosing internal model controls that are not part of your customer workflow
+- using operator-only controls that are not part of the customer workflow
 
 ## Help model
 

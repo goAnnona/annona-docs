@@ -9,6 +9,7 @@ Use Help to:
 - open docs for the screen or workflow you are using
 - understand customer-safe troubleshooting steps
 - find the right path for account or access problems
+- confirm what belongs inside your customer workspace
 - gather context before contacting support
 
 ## In-product help links
@@ -19,6 +20,17 @@ When Annona shows help text or a help button, the link should:
 - match the screen, task, or state you are currently using
 - avoid internal runbooks, operator notes, and private proof artifacts
 - remain stable as implementation details change
+
+## Useful destinations
+
+Common help destinations include:
+
+- [Customer workspace](help/customer-workspace.md)
+- [Account and access](account/access.md)
+- [Uploads](uploads.md)
+- [Datasets](datasets.md)
+- [Agents](agents.md)
+- [Traces](traces.md)
 
 ## Support context to collect
 

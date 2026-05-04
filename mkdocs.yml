@@ -19,19 +19,14 @@ nav:
       - Home and status: home.md
       - Onboarding: onboarding.md
       - Uploads: uploads.md
-  - Product workflows:
       - Agents: agents.md
       - Datasets: datasets.md
       - Traces: traces.md
   - Account and help:
+      - Customer workspace: help/customer-workspace.md
       - Account and access: account/access.md
       - Help and support: help.md
       - Stable help-link targets: help-link-targets.md
-exclude_docs: |
-  delivery/**
-  ingestion/**
-  proofs/**
-  getting-started/local-preview.md
 markdown_extensions:
   - admonition
   - attr_list
